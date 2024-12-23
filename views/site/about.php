@@ -14,5 +14,12 @@ $this->params['breadcrumbs'][] = $this->title;
         This is the About page. You may modify the following file to customize its content:
     </p>
 
+    <div>
+        <svg id="bin"></svg>
+    </div>
+
     <code><?= __FILE__ ?></code>
 </div>
+<?php
+    $this->registerJsFile('datav/mainBin.js', ['type' => 'module']);
+?>
