@@ -21,5 +21,5 @@ $this->params['breadcrumbs'][] = $this->title;
     <code><?= __FILE__ ?></code>
 </div>
 <?php
-    $this->registerJsFile('datav/mainBin.js', ['type' => 'module']);
+    $this->registerJsFile('@web/datav/mainBin.js', ['depends' => 'yii\web\JqueryAsset']);
 ?>
