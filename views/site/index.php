@@ -11,11 +11,19 @@ use yii\bootstrap5\Html;
 
     <div class="jumbotron text-center bg-transparent mt-5 mb-5">
         <h1 class="display-4">南开大学互联网数据库小组</h1>
-        <p class="lead subtitle-font-size">也少一竖，朋多一鸟</p>
+        <p class="lead subtitle-font-size">NKU不睡觉小分队</p>
 
         <p class="lead">欢迎来到我们的团队主页</p>
 
-        <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
+        <p><a class="btn btn-lg btn-success" href="https://www.ethan2k04.icu/">加入我们</a></p>
+    </div>
+
+     <!-- 在团队介绍上方插入视频 -->
+     <div class="video-container text-center">
+        <video width="100%" height="auto" autoplay loop muted>
+            <source src="<?= Yii::$app->request->baseUrl ?>/videos/team_intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <div class="body-content">
@@ -73,8 +81,6 @@ use yii\bootstrap5\Html;
                 <?php else: ?>
                     <p>暂无留言</p>
                 <?php endif; ?>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
             </div>
         </div>
 
