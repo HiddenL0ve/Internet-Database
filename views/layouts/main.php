@@ -39,11 +39,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => '主页', 'url' => ['/site/index']],
+            ['label' => '关于我们', 'url' => ['/site/about']],
+            ['label' => '联系', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+                ['label' => '登录', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
@@ -55,7 +55,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 . '</li>'
             ),
             Yii::$app->user->isGuest ? (
-                ['label' => 'Signup', 'url' => ['/site/signup']]
+                ['label' => '注册', 'url' => ['/site/signup']]
             ) : false,
         ]
     ]);
