@@ -15,7 +15,7 @@ use yii\bootstrap5\Html;
 
         <p class="lead">欢迎来到我们的团队主页</p>
 
-        <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
+        <p><a class="btn btn-lg btn-success" href="https://www.ethan2k04.icu/">加入我们</a></p>
     </div>
 
     <div class="body-content">
@@ -73,8 +73,6 @@ use yii\bootstrap5\Html;
                 <?php else: ?>
                     <p>暂无留言</p>
                 <?php endif; ?>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
             </div>
         </div>
 
