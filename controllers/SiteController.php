@@ -5,35 +5,78 @@ namespace app\controllers;
 use Yii; // 确保引入 Yii 类
 use yii\web\Controller;
 use app\models\LoginForm;
-use app\models\SignupForm;
+use app\models\ContactForm;
+use app\models\Member;
+use app\models\Team;
+use app\models\Comments;
 
 class SiteController extends Controller
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['logout'],
+                'rules' => [
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::class,
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+            ],
+        ];
+    }
+
+    /**
+     * Displays homepage.
+     *
+     * @return string
+     */
     public function actionIndex()
     {
-        return $this->render('index');
-    }
+        $members = Member::find()->all();
+        $team = Team::findOne(1);
+        $comments = Comments::find()->all();
 
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
-    public function actionContact()
-    {
-        $model = new ContactForm(); // 创建 ContactForm 模型实例
-
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            // 如果表单提交并验证通过，可以在此发送邮件或执行其他逻辑
-            Yii::$app->session->setFlash('contactFormSubmitted', 'Thank you for contacting us.');
-            return $this->refresh(); // 刷新页面
-        }
-
-        return $this->render('contact', [
-            'model' => $model, // 将模型传递到视图
+        return $this->render('index', [
+            'members' => $members,
+            'team' => $team,
+            'comments' => $comments,
         ]);
     }
 
+    /**
+     * Login action.
+     *
+     * @return Response|string
+     */
     public function actionLogin()
 {
     if (!Yii::$app->user->isGuest) {
