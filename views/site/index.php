@@ -50,7 +50,7 @@ use yii\bootstrap5\Html;
                             <h3>组员<?= $index + 1 ?>：<?= Html::encode($member->name) ?></h3>
                             <p>专业：<?= Html::encode($member->major) ?></p>
                             <p><?= Html::encode($member->bio) ?></p>
-                            <p><a class="btn btn-outline-secondary" href="#">了解更多 &raquo;</a></p>
+                            <p><a class="btn btn-outline-secondary" href="<?= Yii::$app->urlManager->createUrl(['site/about']) ?>">了解更多 &raquo;</a></p>
                         </div>
                     </div>
                 </div>
