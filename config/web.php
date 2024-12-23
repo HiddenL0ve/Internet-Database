@@ -52,7 +52,7 @@ $config = [
                 'about' => 'site/about',
                 'contact' => 'site/contact',
                 'login' => 'site/login',
-                'signup' =>'site/signup'
+                'signup' =>'site/signup',
             ],
         ],
     ],

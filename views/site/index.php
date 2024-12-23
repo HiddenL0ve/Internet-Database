@@ -81,8 +81,6 @@ use yii\bootstrap5\Html;
     </div>
 </div>
 
-<div id="footer-background"></div>
-
 <?php
 $this->registerCss("
     #footer-background {
