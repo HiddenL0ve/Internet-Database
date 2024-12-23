@@ -9,6 +9,9 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Member;
+use app\models\Team;
+use app\models\Comments;
 
 class SiteController extends Controller
 {
@@ -61,7 +64,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $members = Member::find()->all();
+        $team = Team::findOne(1);
+        $comments = Comments::find()->all();
+
+        return $this->render('index', [
+            'members' => $members,
+            'team' => $team,
+            'comments' => $comments,
+        ]);
     }
 
     /**
