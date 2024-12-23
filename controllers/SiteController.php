@@ -12,9 +12,7 @@ use app\models\ContactForm;
 use app\models\Member;
 use app\models\Team;
 use app\models\Comments;
-
-
-
+use app\models\SignupForm;
 
 class SiteController extends Controller
 {
@@ -113,6 +111,11 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionContact()
+    {
+        return $this->render('contact');
     }
 
     public function actionSignup()
