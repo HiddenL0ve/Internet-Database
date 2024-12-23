@@ -12,9 +12,7 @@ use app\models\ContactForm;
 use app\models\Member;
 use app\models\Team;
 use app\models\Comments;
-
-
-
+use app\models\SignupForm;
 
 class SiteController extends Controller
 {
