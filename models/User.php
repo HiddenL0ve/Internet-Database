@@ -34,6 +34,11 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     /**
      * {@inheritdoc}
      */
+
+    public static function tableName()
+{
+    return 'user';  // 显式指定表名
+}
     public static function findIdentity($id)
     {
         return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
