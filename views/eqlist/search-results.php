@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $model app\models\EqlistSearch */
 
-$this->title = 'Search Results';
+$this->title = '检索结果';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-search-results">

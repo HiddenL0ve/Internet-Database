@@ -38,16 +38,10 @@ class EqlistController extends Controller
             // 如果没有有效的搜索条件，返回一个空的DataProvider
             $dataProvider = new ActiveDataProvider([
                 'query' => Eqlist::find(),
-                'pagination' => [
-                    'pageSize' => 10, // 设置每页显示的记录数
-                ],
             ]);
         }
 
-        // 设置默认的分页参数
-        $dataProvider->pagination->pageSize = 10;
-
-        return $this->render('search', [
+        return $this->render('search-results', [
             'model' => $model,
             'dataProvider' => $dataProvider,
         ]);
