@@ -4,21 +4,13 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
+use app\models\User;  // 引入 User 模型
 
-/**
- * LoginForm is the model behind the login form.
- *
- * @property-read User|null $user
- *
- */
 class LoginForm extends Model
 {
     public $username;
     public $password;
-    public $rememberMe = true;
-
-    private $_user = false;
-
+    public $rememberMe = false;
 
     /**
      * @return array the validation rules.
@@ -26,56 +18,39 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            // username and password are both required
+            // username and password are required
             [['username', 'password'], 'required'],
-            // rememberMe must be a boolean value
+            // rememberMe must be a boolean
             ['rememberMe', 'boolean'],
-            // password is validated by validatePassword()
-            ['password', 'validatePassword'],
         ];
     }
 
     /**
-     * Validates the password.
-     * This method serves as the inline validation for password.
+     * Validates the user credentials.
+     * This method checks whether the provided username and password match the stored ones.
      *
-     * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
-     */
-    public function validatePassword($attribute, $params)
-    {
-        if (!$this->hasErrors()) {
-            $user = $this->getUser();
-
-            if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
-            }
-        }
-    }
-
-    /**
-     * Logs in a user using the provided username and password.
-     * @return bool whether the user is logged in successfully
+     * @return bool whether the user is authenticated or not.
      */
     public function login()
     {
-        if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+        // 查询数据库中是否有该用户
+        $user = User::findOne(['username' => $this->username]);
+
+        // 检查用户名和密码是否匹配
+        if ($user && $user->password === $this->password) {
+            // 设置用户的登录信息
+            Yii::$app->session->set('username', $this->username);
+            return true;
         }
+
         return false;
     }
 
     /**
-     * Finds user by [[username]]
-     *
-     * @return User|null
+     * Logs the user out.
      */
-    public function getUser()
+    public function logout()
     {
-        if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
-        }
-
-        return $this->_user;
+        Yii::$app->session->remove('username');
     }
 }
