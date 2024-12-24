@@ -3,4 +3,4 @@ CREATE TABLE `user` (
     `password` VARCHAR(255) NOT NULL  -- 用于存储加密后的密码
 );
 
-INSERT INTO `user` VALUES ('admin', 'root123');
+

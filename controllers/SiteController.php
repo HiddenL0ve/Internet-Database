@@ -13,6 +13,7 @@ use app\models\Member;
 use app\models\Team;
 use app\models\Comments;
 use app\models\SignupForm;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -123,8 +124,15 @@ class SiteController extends Controller
         $model = new SignupForm();
 
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
-            Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
-            return $this->redirect(['site/login']);
+            $user = new User();
+            $user->username = $model->username;
+            $user->setPassword($model->password);  // 使用 setPassword 来加密密码
+            $user->generateAuthKey();  // 生成 authKey
+
+            if ($user->save()) {
+                Yii::$app->session->setFlash('success', '注册成功!');
+                return $this->redirect(['site/login']);
+            }
         }
 
         return $this->render('signup', [

@@ -5,7 +5,7 @@ use Yii;
 use yii\db\ActiveRecord;
 
 
-class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
+class User extends ActiveRecord implements \yii\web\IdentityInterface
 {
     public $id;
     public $username;
@@ -35,10 +35,11 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      * {@inheritdoc}
      */
 
-    public static function tableName()
-{
-    return 'user';  // 显式指定表名
-}
+   // 指定模型对应的数据库表名
+   public static function tableName()
+   {
+       return 'user';
+   }
     public static function findIdentity($id)
     {
         return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
@@ -97,6 +98,18 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     public function validateAuthKey($authKey)
     {
         return $this->authKey === $authKey;
+    }
+
+    // 生成 authKey 方法
+    public function generateAuthKey()
+    {
+        $this->authKey = Yii::$app->getSecurity()->generateRandomString();
+    }
+
+    // 需要定义 setPassword
+    public function setPassword($password)
+    {
+        $this->password = Yii::$app->getSecurity()->generatePasswordHash($password);
     }
 
     /**
