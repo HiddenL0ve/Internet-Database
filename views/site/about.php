@@ -36,6 +36,11 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="contact-info mb-5">
+        <h3 class="text-primary mb-3">可视化项目</h3>
+        <p><a class="btn btn-outline-secondary" href="<?= Yii::$app->urlManager->createUrl(['record/index']) ?>">查看 &raquo;</a></p>
+    </div>
+
+    <div class="contact-info mb-5">
         <h3 class="text-primary mb-3">联系我们</h3>
         <p class="lead text-muted mb-4">
             如果你对我们的工作有任何问题或想要合作，欢迎通过以下方式联系我们：
