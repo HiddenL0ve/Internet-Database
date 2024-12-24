@@ -50,9 +50,13 @@ class SiteController extends Controller
         // 创建 LoginForm 实例
         $model = new LoginForm();
 
-        // 如果提交了表单
+        if (!Yii::$app->user->isGuest) {
+            return $this->redirect(['admin/index']);
+        }
+    
+        $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect(['site/newpage']);  // 登录成功后返回上一页
+            return $this->redirect(['admin/index']);
         }
 
         $model->password = '';  // 清空密码字段，防止显示原密码
@@ -62,10 +66,16 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-    public function actionNewpage()
-    {
-        return $this->render('newpage');  // 渲染 views/site/newpage.php
-    }
+//     public function actionNewpage()
+// {
+//     // 假设你想显示所有评论
+//     $comments = Comments::find()->all();
+
+//     return $this->render('newpage', [
+//         'comments' => $comments,
+//     ]);
+// }
+
     /**
      * 自定义的登录验证
      *
