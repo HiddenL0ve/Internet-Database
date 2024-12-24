@@ -1,7 +1,23 @@
 <?php
 /* @var $this yii\web\View */
 /* @var $comments app\models\Comments[] */
-
+/**
+ * 南开大学互联网数据库小组网站
+ *
+ * 文件名：login.php
+ * 
+ * 团队：NKU不睡觉小分队
+ * 编写者：殷腾骄2212202
+ * 
+ * 功能简介：
+ * 这是网站的登录页面视图文件。它提供了用户登录表单，
+ * 包括用户名、密码输入框，以及"记住我"选项。
+ * 同时还显示了登录提示信息和背景图片设置。
+ *
+ * @link      https://dbis.nankai.edu.cn
+ * @copyright Copyright (c) 2025 NKU Internet Database Team
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Alert;
 

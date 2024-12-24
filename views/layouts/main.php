@@ -1,5 +1,20 @@
 <?php
-
+/**
+ * 南开大学互联网数据库小组网站
+ *
+ * 文件名：main.php
+ * 
+ * 团队：NKU不睡觉小分队
+ * 编写者：殷腾骄2212202
+ * 
+ * 功能简介：
+ * 这是网站的主布局文件。它包含了页面的头部、导航栏、
+ * 主体内容和页脚，并注册了必要的资源和元标签。
+ *
+ * @link      https://dbis.nankai.edu.cn
+ * @copyright Copyright (c) 2025 NKU Internet Database Team
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 /** @var yii\web\View $this */
 /** @var string $content */
 

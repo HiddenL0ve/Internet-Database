@@ -1,4 +1,19 @@
 <?php
+/**
+ * 南开大学互联网数据库小组网站
+ *
+ * 文件名：index.php
+ * 
+ * 团队：NKU不睡觉小分队
+ * 编写者：周末2211349
+ * 
+ * 功能简介：
+ * 这是后台管理的留言列表页面。管理员可以查看、编辑和删除用户的留言。
+ *
+ * @link      https://dbis.nankai.edu.cn
+ * @copyright Copyright (c) 2025 NKU Internet Database Team
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 /* @var $this yii\web\View */
 /* @var $comments app\models\Comments[] */
 

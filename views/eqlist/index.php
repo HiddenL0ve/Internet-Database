@@ -1,5 +1,21 @@
 <!-- Eqlist Index View -->
 <?php
+/**
+ * 南开大学互联网数据库小组网站
+ *
+ * 文件名：index.php
+ * 
+ * 团队：NKU不睡觉小分队
+ * 编写者：孙致勉2211278
+ * 
+ * 功能简介：
+ * 这是网站的主页视图文件。它展示了团队介绍、成员信息、
+ * 留言板等内容，并提供了地震数据库检索的入口。
+ *
+ * @link      https://dbis.nankai.edu.cn
+ * @copyright Copyright (c) 2025 NKU Internet Database Team
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 /** @var yii\web\View $this */
 
 use yii\helpers\Html;
