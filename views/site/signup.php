@@ -32,3 +32,25 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+
+<div id="footer-background"></div>
+
+<?php
+$this->registerCss("
+    #footer-background {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/images/bg_nku.png');
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+
+    #footer {
+        position: relative;
+        z-index: 1;
+    }
+");
