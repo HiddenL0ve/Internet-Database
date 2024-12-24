@@ -4,8 +4,8 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class Eqlist extends \yii\db\ActiveRecord
-{
+class Eqlist extends ActiveRecord
+{   
     /**
      * 返回与此 AR 类关联的数据库表名。
      *
@@ -24,11 +24,45 @@ class Eqlist extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'hour', 'minute', 'second', 'place_name', 'latitude_d', 'latitude_m', 'longitude_d', 'longitude_m', 'depth', 'magnitude', 'max_intensity'], 'safe'],
-            // 如果有需要，可以为每个字段添加更多的验证规则，例如：
-            // [['date', 'hour', 'minute', 'second'], 'required'],
-            // [['depth', 'magnitude', 'max_intensity'], 'number'],
-            // [['latitude_d', 'latitude_m', 'longitude_d', 'longitude_m'], 'integer'],
+            [[
+                'id',
+                'Date',
+                'Hour',
+                'Minute',
+                'Second',
+                'PlaceName',
+                'LatitudeD',
+                'LatitudeM',
+                'LongitudeD',
+                'LongitudeM',
+                'Depth',
+                'Magnitude',
+                'MaxIntensity',
+            ], 'safe'],
+        ];
+    }
+
+     /**
+     * 定义各属性。
+     *
+     * @return array 属性
+     */
+    public function attributes()
+    {
+        return [
+            'id',
+            'Date',
+            'Hour',
+            'Minute',
+            'Second',
+            'PlaceName',
+            'LatitudeD',
+            'LatitudeM',
+            'LongitudeD',
+            'LongitudeM',
+            'Depth',
+            'Magnitude',
+            'MaxIntensity',
         ];
     }
 
@@ -41,18 +75,18 @@ class Eqlist extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'date' => '日期',
-            'hour' => '小时',
-            'minute' => '分钟',
-            'second' => '秒',
-            'place_name' => '地点名称',
-            'latitude_d' => '纬度D',
-            'latitude_m' => '纬度M',
-            'longitude_d' => '经度D',
-            'longitude_m' => '经度M',
-            'depth' => '深度',
-            'magnitude' => '震级',
-            'max_intensity' => '最大震度',
+            'Date' => '日期',
+            'Hour' => '小时',
+            'Minute' => '分钟',
+            'Second' => '秒',
+            'PlaceName' => '地点名称',
+            'LatitudeD' => '纬度D',
+            'LatitudeM' => '纬度M',
+            'LongitudeD' => '经度D',
+            'LongitudeM' => '经度M',
+            'Depth' => '深度',
+            'Magnitude' => '震级',
+            'MaxIntensity' => '最大震度',
         ];
     }
 }

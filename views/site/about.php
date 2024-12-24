@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 <?php
-    $this->registerJsFile('@web/datav/mainBin.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('@web/datav/mainBin.js', ['depends' => 'yii\web\JqueryAsset', 'type' => 'module']);
 ?>
 
 <div id="footer-background"></div>

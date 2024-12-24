@@ -84,10 +84,19 @@ use yii\bootstrap5\Html;
             </div>
         </div>
 
+        <?php
+            use yii\helpers\Url;
+
+            // 使用Url::to()生成EqlistController的actionIndex的URL
+            $eqlistUrl = Url::to(['eqlist/search']);
+
+            // 创建一个按钮，点击时会跳转到Eqlist Index
+            echo Html::button('Go to Eqlist Index', ['onclick' => "window.location.href='" . $eqlistUrl . "';", 'class' => 'btn btn-primary']);
+            ?><div id="footer-background">
+        </div>
+
     </div>
 </div>
-
-<div id="footer-background"></div>
 
 <?php
 $this->registerCss("
