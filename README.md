@@ -14,6 +14,7 @@
 
 ## 目录结构
 -------------------
+- `data/`               包含小组/个人作业和sql文件
 - `assets/`             包含资源定义
 - `commands/`           包含控制台命令
 - `config/`             包含应用配置
@@ -39,27 +40,20 @@ composer install
 ### 2. 启动本地开发服务器
 安装完成后，可以使用 Yii 2 自带的开发服务器在本地运行项目：
 
-bash
-Copy code
+```bash
 php yii serve
+```
+
 然后你可以在浏览器中访问以下地址查看应用：
 
-bash
-Copy code
+```bash
 http://localhost:8080
-配置
-数据库配置
-请编辑 config/db.php 文件，配置实际的数据库连接。例如：
+```
 
-php
-Copy code
-return [
-    'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
-    'username' => 'root',
-    'password' => '1234',
-    'charset' => 'utf8',
-];
+## 数据库配置
+
+使用任何一个数据库管理软件，如NaviCat，打开data/下面的install.sql，选择运行sql脚本即可执行建库语句。
+
 
 ## 其他配置
 根据项目需求，修改 config/ 目录下的其他文件进行个性化配置。
@@ -67,7 +61,6 @@ return [
 项目中包含了基本的单元测试和功能测试。你可以使用以下命令运行测试：
 
 ```bash
-Copy code
 vendor/bin/codecept run
 ```
 这将运行所有的单元测试和功能测试。如果你需要运行接受性测试，可以按照以下步骤进行：
@@ -75,20 +68,17 @@ vendor/bin/codecept run
 将 tests/acceptance.suite.yml.example 重命名为 tests/acceptance.suite.yml。
 更新 Composer 依赖：
 ```bash
-Copy code
 composer update
 ```
 启动 Selenium 服务，并按照文档要求配置浏览器驱动。
 运行接受性测试：
 ```bash
-Copy code
 vendor/bin/codecept run acceptance
 ```
 代码覆盖率支持
 你可以启用代码覆盖率并生成相关报告：
 
 ```bash
-Copy code
 vendor/bin/codecept run --coverage --coverage-html --coverage-xml
 ```
 代码覆盖率报告将保存在 tests/_output 目录下。

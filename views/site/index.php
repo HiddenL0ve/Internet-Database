@@ -32,10 +32,16 @@ use yii\bootstrap5\Html;
         <p class="lead">欢迎来到我们的团队主页</p>
 
         <p><a class="btn btn-lg btn-success" href="https://dbis.nankai.edu.cn/teachers/list.htm">加入我们</a></p>
+    
+        <div class="text-center mt-4">
+        <p class="lead">克隆我们的 GitHub 仓库：</p>
+        <pre class="bg-dark text-light p-3 rounded-3" style="font-family: 'Courier New', monospace; display: inline-block;">git clone https://github.com/HiddenL0ve/Internet-Database.git</pre>
+    </div>
+    </div>
     </div>
 
      <!-- 在团队介绍上方插入视频 -->
-     <div class="video-container text-center mb-5"> <!-- Added margin-bottom to create spacing -->
+     <div class="video-container text-center mb-5">
         <video width="100%" height="auto" autoplay loop muted>
             <source src="<?= Yii::$app->request->baseUrl ?>/videos/team_intro.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -44,9 +50,9 @@ use yii\bootstrap5\Html;
 
     <div class="body-content">
         <!-- 团队展示部分 -->
-        <div class="row flex-column mb-5"> <!-- Increased bottom margin for spacing -->
+        <div class="row flex-column mb-5">
             <div class="col-lg-12 mb-3">
-                <h2 class="text-primary">团队展示</h2> <!-- Title in blue -->
+                <h2 class="text-primary">团队展示</h2>
                 <p><?= Html::encode($team->content) ?></p>
 
                 <p><a class="btn btn-outline-secondary" href="<?= Yii::$app->urlManager->createUrl(['site/about']) ?>">详细介绍 &raquo;</a></p>
@@ -90,7 +96,7 @@ use yii\bootstrap5\Html;
         <!-- 留言板部分 -->
         <div class="row">
             <div class="col-lg-12 mb-3">
-                <h2 class="text-primary">留言板</h2> <!-- Title in blue -->
+                <h2 class="text-primary">留言板</h2>
 
                 <?php if (!empty($comments)): ?>
                     <!-- 遍历所有留言并显示 -->
@@ -109,7 +115,7 @@ use yii\bootstrap5\Html;
         </div>
 
         <!-- 按钮部分 -->
-        <div class="d-flex justify-content-center mb-4"> <!-- Centered buttons -->
+        <div class="d-flex justify-content-center mb-4">
             <?php
                 use yii\helpers\Url;
                 // 第一个按钮

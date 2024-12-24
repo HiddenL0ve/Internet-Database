@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-lg-12">
-            <!-- Display the Map here -->
             <div id="map" style="width: 100%; height: 400px;"></div>
         </div>
     </div>
