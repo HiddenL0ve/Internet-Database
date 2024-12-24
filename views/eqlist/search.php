@@ -5,7 +5,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\EqlistSearch */
 
-$this->title = 'Earthquake Data Query';
+$this->title = '地震数据库检索';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-search">
@@ -13,8 +13,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php $form = ActiveForm::begin(['id' => 'queryForm']); ?>
 
-        <?= $form->field($model, 'startDate')->input('text')->hint('Enter the start date in YYYY-MM-DD format') ?>
-        <?= $form->field($model, 'endDate')->input('text')->hint('Enter the end date in YYYY-MM-DD format') ?>
+        <?= $form->field($model, 'startDate')->input('text')->hint('请输入开始时间，格式： YYYY-MM-DD') ?>
+        <?= $form->field($model, 'endDate')->input('text')->hint('请输入结束时间，格式： YYYY-MM-DD') ?>
 
         <?= $form->field($model, 'minMagnitude')->input('number') ?>
         <?= $form->field($model, 'maxMagnitude')->input('number') ?>

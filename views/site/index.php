@@ -86,13 +86,16 @@ use yii\bootstrap5\Html;
 
         <?php
             use yii\helpers\Url;
-
-            // 使用Url::to()生成EqlistController的actionIndex的URL
+            // 第一个按钮
             $eqlistUrl = Url::to(['eqlist/search']);
+            echo Html::button('地震数据库检索', ['onclick' => "window.location.href='" . $eqlistUrl . "';", 'class' => 'btn btn-primary']);
+            echo '<p> &nbsp; </p>'; // 添加换行标签
 
-            // 创建一个按钮，点击时会跳转到Eqlist Index
-            echo Html::button('Go to Eqlist Index', ['onclick' => "window.location.href='" . $eqlistUrl . "';", 'class' => 'btn btn-primary']);
-            ?><div id="footer-background">
+            // 第二个按钮
+            $eqlistUrl = Url::to(['eqlist/detail']);
+            echo Html::button('震灾详细数据检索', ['onclick' => "window.location.href='" . $eqlistUrl . "';", 'class' => 'btn btn-primary']);       
+        ?>
+            <div id="footer-background">
         </div>
 
     </div>

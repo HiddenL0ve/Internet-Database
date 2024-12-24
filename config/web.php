@@ -53,6 +53,8 @@ $config = [
                 'contact' => 'site/contact',
                 'login' => 'site/login',
                 'signup' =>'site/signup',
+                'get-detail' => 'eqlist/get-detail',
+                'get-op-data' => 'eqlist/get-op-data',
             ],
         ],
     ],
