@@ -2,7 +2,7 @@
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
     </a>
-    <h1 align="center">我们的 Yii 2 小组大作业</h1>
+    <h1 align="center">基于Yii 2框架的互联网数据库大作业</h1>
     <br>
 </p>
 
