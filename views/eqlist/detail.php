@@ -1,4 +1,20 @@
 <?php
+/**
+ * 南开大学互联网数据库小组网站
+ *
+ * 文件名：detail.php
+ * 
+ * 团队：NKU不睡觉小分队
+ * 编写者：陈星烨2212518
+ * 
+ * 功能简介：
+ * 这是震灾详细信息页面。用户可以查看选定事件的详细信息，
+ * 包括震度、位置等。
+ *
+ * @link      https://dbis.nankai.edu.cn
+ * @copyright Copyright (c) 2025 NKU Internet Database Team
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;

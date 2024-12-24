@@ -1,5 +1,20 @@
 <?php
-
+/**
+ * 南开大学互联网数据库小组网站
+ *
+ * 文件名：contact.php
+ * 
+ * 团队：NKU不睡觉小分队
+ * 编写者：殷腾骄2212202
+ * 
+ * 功能简介：
+ * 这是网站的团队联系方式界面，它显示了一张动态加载的
+ * 地图，标明了我们小组的工作地址，同时还包括团队邮箱和电话。
+ *
+ * @link      https://dbis.nankai.edu.cn
+ * @copyright Copyright (c) 2025 NKU Internet Database Team
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 /** @var yii\web\View $this */
 
 use yii\bootstrap5\Html;
